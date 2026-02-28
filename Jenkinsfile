@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-             sh "docker build --no-cache -t myapp ."
+             sh "docker build --no-cache -t two-tier-flask ."
             }
         }
 
