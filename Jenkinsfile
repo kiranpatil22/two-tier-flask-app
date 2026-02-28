@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-             sh "docker build --no-cache -t two-tier-flask ."
+             sh "docker build --no-cache -t two-tier-flask-app ."
             }
         }
 
@@ -38,5 +38,10 @@ pipeline {
                 sh "docker compose up -d --build flask-app"
                   }
              }
+        stage("Cleanup"){
+    steps{
+        sh "docker image prune -f"
+    }
+}
         }
     }
