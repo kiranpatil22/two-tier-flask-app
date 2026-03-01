@@ -44,4 +44,21 @@ pipeline {
     }
 }
         }
+post {
+    success{
+        emailext(
+            from: 'kiranpatiluniverse@gmail.com',
+            subject: "Build Successful",
+            body: "Good news: Your build  successful",
+            to: 'kiranpatiluniverse@gmail.com')
+    }
+    failure{
+         emailext(
+            from: 'kiranpatiluniverse@gmail.com',
+            subject: "Build failed",
+            body: "Good news: Your build failed",
+            to: 'kiranpatiluniverse@gmail.com')
+        
+    }
+}
     }
