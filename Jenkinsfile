@@ -8,6 +8,12 @@ pipeline {
             }
         }
 
+        stage('Trivy file system scan') {
+            steps {
+             sh "trivy fs . -o scan-results.jason"
+            }
+        }
+
         stage('Build') {
             steps {
              sh "docker build --no-cache -t two-tier-flask-app ."
