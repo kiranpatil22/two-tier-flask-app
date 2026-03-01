@@ -10,7 +10,7 @@ pipeline {
 
         stage('Trivy file system scan') {
             steps {
-             sh "trivy fs . -o scan-results.jason"
+             sh "trivy fs . -o scan-results.json"
             }
         }
 
